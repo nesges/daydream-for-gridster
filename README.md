@@ -1,4 +1,4 @@
-# daydream-for-gridster
+# daydream for gridster
 a simple daydream for gridster.js. resizes all gridster widgets to 1x1 and shuffles them over the grid.
 
 ## Usage
