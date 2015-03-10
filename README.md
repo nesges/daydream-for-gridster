@@ -14,12 +14,12 @@ a simple daydream for gridster.js. resizes all gridster widgets to 1x1 and shuff
 
 * starttime
 
-    (re)start daydream after <starttime> ms.
+    (re)start daydream after starttime ms.
     defaults to 60000 (1min) if not set
 
 * slowdown
 
-    slowdown daydream animations by <slowdown> ms.
+    slowdown daydream animations by slowdown ms.
     defaults to 1000 (1sec) if not set
 
 * gridmaxx, gridmaxy
