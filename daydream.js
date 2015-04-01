@@ -47,6 +47,7 @@ $(document).ready(function(){
         elem.attr("data-col-save", elem.attr("data-col"));
         elem.attr("data-sizex-save", elem.attr("data-sizex"));
         elem.attr("data-sizey-save", elem.attr("data-sizey"));
+        elem.attr("data-overflow-save", elem.css("overflow"));
         
         if(autoSize) {
             gridMaxY = Math.max(gridMaxY, elem.attr("data-row")*1 + elem.attr("data-sizey")*1 - 1);
@@ -67,6 +68,7 @@ function startAnimation() {
     $("li").each(function(i) {
         var elem = $(this);
         elem.css("pointer-events", "none");
+        elem.css("overflow", "hidden");
         setTimeout(function() {elem.attr("data-sizex", 1);}, Math.floor(Math.random()*slowdown));
         setTimeout(function() {elem.attr("data-sizey", 1);}, Math.floor(Math.random()*slowdown));
         intervalRow[i] = setInterval(function() {elem.attr("data-row", Math.floor(Math.random()*gridMaxY)+1);}, Math.floor(Math.random()*4000)+slowdown);
@@ -83,6 +85,7 @@ function stopAnimation() {
         elem.attr("data-sizey", elem.attr("data-sizey-save"));
         elem.attr("data-row", elem.attr("data-row-save"));
         elem.attr("data-col", elem.attr("data-col-save"));
+        elem.css("overflow", elem.attr("data-overflow-save"));
         elem.css("pointer-events", "auto");
     });
 }
