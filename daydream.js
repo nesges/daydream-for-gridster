@@ -50,8 +50,10 @@ $(document).ready(function(){
         elem.attr("data-overflow-save", elem.css("overflow"));
         
         if(autoSize) {
-            gridMaxY = Math.max(gridMaxY, elem.attr("data-row")*1 + elem.attr("data-sizey")*1 - 1);
-            gridMaxX = Math.max(gridMaxX, elem.attr("data-col")*1 + elem.attr("data-sizex")*1 - 1);
+            if(elem.attr("data-row") && elem.attr("data-col") && elem.attr("data-sizex") && elem.attr("data-sizey")) {
+                gridMaxY = Math.max(gridMaxY, elem.attr("data-row")*1 + elem.attr("data-sizey")*1 - 1);
+                gridMaxX = Math.max(gridMaxX, elem.attr("data-col")*1 + elem.attr("data-sizex")*1 - 1);
+            }
         }
     });
     timeoutStart = setTimeout(function() {startAnimation()}, starttime);
